@@ -46,7 +46,7 @@ class NetworkService {
   }
 
   //Cake
-   Future<CakeNModel> getAllCakeNDio() async {
+  Future<CakeNModel> getAllCakeNDio() async {
     var url = API.BASE_URL + API.CAKE_N;
     print('url getAllCakeGeneralDio() = ' + url);
     final response = await _dio.get(url);
@@ -56,5 +56,5 @@ class NetworkService {
     }
     throw Exception('Network failed');
   }
-  
+
 }

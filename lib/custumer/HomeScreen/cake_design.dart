@@ -29,12 +29,12 @@ class _CakeDesignState extends State<CakeDesign> {
                   //margin: EdgeInsets.only(left: 26)
                   child: Center(
                       child: Text(
-                    'Cake Order Details',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500),
-                  )),
+                        'Cake Order Details',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500),
+                      )),
                   width: double.maxFinite,
                   padding: EdgeInsets.only(top: 5, bottom: 10),
                   decoration: BoxDecoration(

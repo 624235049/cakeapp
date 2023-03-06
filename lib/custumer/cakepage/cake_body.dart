@@ -13,13 +13,13 @@ class CakeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: 
+        child:
         FutureBuilder<CakeNModel>(
           future: NetworkService().getAllCakeNDio(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-                  //padding: EdgeInsets.only(top: 10, bottom: 15),
+                //padding: EdgeInsets.only(top: 10, bottom: 15),
                   itemCount: snapshot.data.cakens.length,
                   itemBuilder: (context, index) {
                     var cake = snapshot.data.cakens[index];
@@ -46,9 +46,9 @@ class CakeBody extends StatelessWidget {
                                   children: [
                                     Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           width: 120,
@@ -61,7 +61,7 @@ class CakeBody extends StatelessWidget {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsets.only(left: 10),
+                                          const EdgeInsets.only(left: 10),
                                           child: Column(
                                             children: [
                                               Text(
@@ -73,7 +73,7 @@ class CakeBody extends StatelessWidget {
                                                   style: TextStyle(
                                                       fontSize: 20,
                                                       fontWeight:
-                                                          FontWeight.w600)),
+                                                      FontWeight.w600)),
                                               // Text(
                                               //   'ราคา',
                                               //   style: TextStyle(

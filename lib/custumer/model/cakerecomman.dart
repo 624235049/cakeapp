@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final cakerecommenModel = cakerecommenModelFromJson(jsonString);
-
 import 'dart:convert';
 
 CakerecommenModel cakerecommenModelFromJson(String str) => CakerecommenModel.fromJson(json.decode(str));

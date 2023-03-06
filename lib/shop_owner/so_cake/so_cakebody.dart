@@ -1,9 +1,9 @@
-import 'package:cakeapp/config/api.dart';
-import 'package:cakeapp/config/approute.dart';
-import 'package:cakeapp/custumer/model/cake_n_model.dart';
-import 'package:cakeapp/services/network.dart';
 
 import 'package:flutter/material.dart';
+
+import '../../config/api.dart';
+import '../../custumer/model/cake_n_model.dart';
+import '../../services/network.dart';
 
 class SOCakeBody extends StatefulWidget {
   @override
@@ -20,7 +20,7 @@ class _SOCakeBodyState extends State<SOCakeBody> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(
-                  //padding: EdgeInsets.only(top: 10, bottom: 15),
+                //padding: EdgeInsets.only(top: 10, bottom: 15),
                   itemCount: snapshot.data.cakens.length,
                   itemBuilder: (context, index) {
                     var cake = snapshot.data.cakens[index];
@@ -47,9 +47,9 @@ class _SOCakeBodyState extends State<SOCakeBody> {
                                   children: [
                                     Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           width: 90,
@@ -71,15 +71,15 @@ class _SOCakeBodyState extends State<SOCakeBody> {
                                                     color: Colors.white,
                                                     fontSize: 20,
                                                     fontWeight:
-                                                        FontWeight.w600),
+                                                    FontWeight.w600),
                                               ),
                                               SizedBox(
                                                 height: 140,
                                               ),
                                               Row(
                                                 mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
+                                                MainAxisAlignment
+                                                    .spaceBetween,
                                                 children: [
                                                   IconButton(
                                                     onPressed: () {

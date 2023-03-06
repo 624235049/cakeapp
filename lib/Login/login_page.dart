@@ -23,8 +23,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void dispose() {
-    _usernameController?.dispose();
-    _passwordController?.dispose();
+    _usernameController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(colors: [
           Color.fromRGBO(252, 205, 246, 1.0),
           Color.fromRGBO(226, 231, 241, 1.0),
@@ -128,20 +128,20 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: () async {
                     checkAuthen();
-                    // final username = _usernameController.text;
-                    // final password = _passwordController.text;
-                    // final message = await NetworkService().validateUserLoginDio(username, password);
-                    // print(message);
-                    // if (message != 'failed') {
-                    //   print('login success');
-                    //   SharedPreferences prefs = await SharedPreferences.getInstance();
-                    //   prefs.setString(AppSetting.userNameSetting, username);
-                    //   prefs.setString(AppSetting.passwordSetting, password);
-                    //
-                    //   Navigator.pushNamed(context, AppRoute.HomeRoute);
-                    // }else{
-                    //   print('login failed');
-                    //  }
+                    final username = _usernameController.text;
+                    final password = _passwordController.text;
+                    final message = await NetworkService().validateUserLoginDio(username, password);
+                    print(message);
+                    if (message != 'failed') {
+                      print('login success');
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      prefs.setString(AppSetting.userNameSetting, username);
+                      prefs.setString(AppSetting.passwordSetting, password);
+
+                      Navigator.pushNamed(context, AppRoute.HomeRoute);
+                    }else{
+                      print('login failed');
+                     }
                   },
                   child: Text('Login',
                       style: TextStyle(
@@ -197,7 +197,7 @@ class _LoginPageState extends State<LoginPage> {
     var password = _passwordController.text;
 
     String url =
-        'http://192.168.1.34:8080/flutterapi/src/getUserWhereUser.php?isAdd=true&User=$email';
+        '${API.BASE_URL}/flutterapi/src/getUserWhereUser.php?isAdd=true&User=$email';
     try {
       Response response = await Dio().get(url);
       //print('res = $response');

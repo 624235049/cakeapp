@@ -12,7 +12,7 @@ class _HomeBodyShopOwnerState extends State<HomeBodyShopOwner> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               alignment: Alignment.topCenter,
               image: AssetImage('assets/images/preview.png'),
